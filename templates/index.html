@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Classification</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        img { max-width: 300px; border-radius: 10px; margin-top: 20px; }
+        .result { margin-top: 20px; font-size: 1.2em; color: #333; }
+        .confidence { color: #666; font-size: 0.9em; }
+        input[type="file"] { margin: 20px 0; }
+        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flower Species Predictor</h1>
+        <p>Upload an image of a flower to identify it.</p>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button type="submit">Predict Flower</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <strong>Prediction:</strong> {{ prediction }} <br>
+                <span class="confidence">Confidence: {{ confidence }}</span>
+            </div>
+            
+            {% if image_path %}
+                <img src="{{ image_path }}" alt="Uploaded Flower">
+            {% endif %}
+        {% endif %}
+    </div>
+
+</body>
+</html>

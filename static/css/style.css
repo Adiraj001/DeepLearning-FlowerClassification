@@ -1,0 +1,67 @@
+:root {
+    --primary: #2e7d32; /* Flower Green */
+    --accent: #fbc02d;  /* Pollen Yellow */
+    --bg: #f1f8e9;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 { color: var(--primary); margin-bottom: 0.5rem; }
+
+.upload-box {
+    border: 2px dashed #ccc;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    background: #fafafa;
+}
+
+.btn-predict {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-predict:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+.result-card {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #e8f5e9;
+    border: 1px solid var(--primary);
+}
+
+.flower-preview {
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
